@@ -37,6 +37,10 @@
           {
             "name": "solve",
             "description": "Solve a specific day's puzzle"
+          },
+          {
+            "name": "year",
+            "description": "Set the Advent of Code year"
           }
         ]
       }
