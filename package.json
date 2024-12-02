@@ -1,0 +1,65 @@
+{
+  "name": "aoc-solver",
+  "displayName": "AoC Solver",
+  "description": "Advent of Code puzzle solver and input fetcher",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Chat"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "aoc-solver.setYear",
+        "title": "Set AoC Year"
+      }
+    ],
+    "chatParticipants": [
+      {
+        "id": "aoc-solver.aoc",
+        "name": "aoc",
+        "fullName": "Advent of Code",
+        "description": "Fetch and manage Advent of Code puzzles",
+        "commands": [
+          {
+            "name": "fetch",
+            "description": "Fetch a specific day's puzzle and input"
+          },
+          {
+            "name": "session",
+            "description": "Set your Advent of Code session cookie"
+          },
+          {
+            "name": "solve",
+            "description": "Solve a specific day's puzzle"
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.44.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
